@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты и справочные данные</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Логотип" class="logo-img">
+        <span>Анатомия тренировок</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="exercises.html">Упражнения</a>
+        <a href="plans.html">Планы</a>
+        <a href="training.html">ОФП</a>
+        <a href="nutrition.html">Питание</a>
+        <a href="diary.html">Дневник</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button id="theme-toggle" class="theme-btn">🌙 Тёмная тема</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-inner content-page" style="max-width: 900px;">
+      <h1 style="text-align: center; margin-bottom: 8px;">Контакты и справочные данные</h1>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 32px;">
+        Вся информация о проекте, его создателях и способах связи.
+      </p>
+
+      <!-- БЛОК 1: Справочные данные -->
+      <h2 style="color: var(--accent); margin-bottom: 16px;">📋 О проекте</h2>
+      <div class="project-info-card" style="margin-bottom: 32px;">
+        <p><b>Название:</b> Интерактивный веб-справочник по тренировке основных мышечных групп</p>
+        <p><b>Год создания:</b> 2026</p>
+        <p><b>Цель:</b> Создать наглядный и удобный справочник, который за пару кликов дает полную информацию о мышцах и помогает составить безопасный план тренировок.</p>
+        <p><b>Технологии:</b> HTML5, CSS3, Vanilla JavaScript, JSON. Дополнительно: интеграция с ИИ (GigaChat).</p>
+      </div>
+
+      <!-- БЛОК 2: Контакты -->
+      <h2 style="color: var(--accent); margin-bottom: 16px;">✉️ Связаться с нами</h2>
+      <div class="contact-info-block" style="margin-bottom: 40px;">
+        <div class="contact-row">
+          <span class="contact-label">📧 Email:</span>
+          <a href="mailto:d_galkin_2010@mail.ru" class="contact-value">d_galkin_2010@mail.ru</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">📞 Телефон:</span>
+          <a href="tel:+79250016966" class="contact-value">8 (925) 001-69-66</a>
+        </div>
+      </div>
+
+      <!-- БЛОК 3: Авторы -->
+      <h2 style="color: var(--accent); margin-bottom: 16px; text-align: center;">Наша команда</h2>
+      <div class="authors-grid" style="margin-bottom: 40px;">
+        <div class="author-card">
+          <div class="author-avatar">Д</div>
+          <h3>Галкин Даниил</h3>
+          <p>Разработчик</p>
+        </div>
+        <div class="author-card">
+          <div class="author-avatar">И</div>
+          <h3>Галкин Илья</h3>
+          <p>Разработчик</p>
+        </div>
+        <div class="author-card">
+          <div class="author-avatar">Д</div>
+          <h3>Опря Дмитрий</h3>
+          <p>Разработчик</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; color: var(--text-muted); font-size: 14px;">
+        © 2026 · Проект выполнен в рамках учебной программы.
+      </div>
+    </div>
+  </section>
+  
+  <script src="theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анатомия тренировок</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Логотип" class="logo-img">
+        <span>Анатомия тренировок</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="exercises.html">Подготовка</a>
+        <a href="plans.html">Планы</a>
+        <a href="training.html">ОФП</a>
+        <a href="nutrition.html">Питание</a>
+        <a href="diary.html">Дневник</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button id="theme-toggle" class="theme-btn">🌙 Тёмная тема</button>
+    </div>
+  </header>
+
+  <!-- ОБЛОЖКА -->
+  <div class="hero-cover">
+    <div class="hero-cover-content">
+      <img src="images/logo.png" alt="Логотип" style="width: 100px; margin-bottom: 24px; animation: float 3s ease-in-out infinite;">
+      <h1 class="hero-title">Анатомия тренировок</h1>
+      <p class="hero-quote">«Ты сильнее, чем думаешь»</p>
+      <a href="#main-content" class="hero-btn">Перейти к справочнику</a>
+    </div>
+  </div>
+
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <section id="main-content" class="section">
+    <div class="hero"><h1 style="font-size: 24px; color: var(--text-muted); font-weight: 400; margin-bottom: 24px;">Интерактивный справочник</h1></div>
+    
+    <main class="layout">
+      <section class="model-section">
+        <div class="view-toggle">
+          <button class="toggle-btn active" data-view="front">Спереди</button>
+          <button class="toggle-btn" data-view="back">Сзади</button>
+        </div>
+        <div class="model-wrapper">
+          <!-- ВИД СПЕРЕДИ -->
+          <svg id="front-view" class="body-svg" viewBox="0 0 200 400">
+            <defs>
+              <linearGradient id="muscleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#93c5fd" />
+                <stop offset="100%" stop-color="#3b82f6" />
+              </linearGradient>
+            </defs>
+            <path class="body-base" d="M 100 10 C 115 10 125 20 125 35 C 125 50 115 60 100 60 C 85 60 75 50 75 35 C 75 20 85 10 100 10 Z" /> 
+            <path class="body-base" d="M 85 62 L 115 62 L 120 90 L 80 90 Z" /> 
+            <path class="body-base" d="M 60 95 C 60 90 70 85 85 85 L 115 85 C 130 85 140 90 140 95 L 135 180 C 135 195 120 200 100 200 C 80 200 65 195 65 180 Z" /> 
+            <path class="body-base" d="M 60 95 L 40 95 L 35 150 L 45 210 L 55 210 L 50 150 L 65 120 Z" />
+            <path class="body-base" d="M 140 95 L 160 95 L 165 150 L 155 210 L 145 210 L 150 150 L 135 120 Z" />
+            <path class="body-base" d="M 70 195 L 95 195 L 95 320 L 75 380 L 65 380 L 80 310 Z" />
+            <path class="body-base" d="M 105 195 L 130 195 L 120 310 L 135 380 L 125 380 L 105 320 Z" />
+
+            <path id="chest" class="muscle" d="M 70 100 C 85 90 115 90 130 100 L 130 130 C 115 135 85 135 70 130 Z" />
+            <path id="abs" class="muscle" d="M 80 140 L 120 140 L 120 190 L 80 190 Z" />
+            <path id="quads" class="muscle" d="M 75 210 L 95 210 L 90 300 L 72 300 Z" />
+            <path id="quads2" class="muscle" d="M 105 210 L 125 210 L 128 300 L 110 300 Z" />
+            <path id="biceps" class="muscle" d="M 42 100 L 55 100 L 50 150 L 40 150 Z" />
+            <path id="biceps2" class="muscle" d="M 145 100 L 158 100 L 160 150 L 150 150 Z" />
+            <path id="shoulders" class="muscle" d="M 60 90 L 75 90 L 75 105 L 55 105 Z" />
+            <path id="shoulders2" class="muscle" d="M 125 90 L 140 90 L 145 105 L 125 105 Z" />
+            <path id="forearms" class="muscle" d="M 38 150 L 52 150 L 48 190 L 42 190 Z" />
+            <path id="forearms2" class="muscle" d="M 148 150 L 162 150 L 158 190 L 152 190 Z" />
+            <path id="calves" class="muscle" d="M 74 310 L 94 310 L 90 360 L 72 360 Z" />
+            <path id="calves2" class="muscle" d="M 106 310 L 126 310 L 128 360 L 110 360 Z" />
+          </svg>
+
+          <!-- ВИД СЗАДИ -->
+          <svg id="back-view" class="body-svg hidden" viewBox="0 0 200 400">
+            <defs>
+              <linearGradient id="muscleGradientBack" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#93c5fd" />
+                <stop offset="100%" stop-color="#3b82f6" />
+              </linearGradient>
+            </defs>
+            <path class="body-base" d="M 100 10 C 115 10 125 20 125 35 C 125 50 115 60 100 60 C 85 60 75 50 75 35 C 75 20 85 10 100 10 Z" /> 
+            <path class="body-base" d="M 85 62 L 115 62 L 120 90 L 80 90 Z" /> 
+            <path class="body-base" d="M 60 95 C 60 90 70 85 85 85 L 115 85 C 130 85 140 90 140 95 L 135 180 C 135 195 120 200 100 200 C 80 200 65 195 65 180 Z" /> 
+            <path class="body-base" d="M 60 95 L 40 95 L 35 150 L 45 210 L 55 210 L 50 150 L 65 120 Z" />
+            <path class="body-base" d="M 140 95 L 160 95 L 165 150 L 155 210 L 145 210 L 150 150 L 135 120 Z" />
+            <path class="body-base" d="M 70 195 L 95 195 L 95 320 L 75 380 L 65 380 L 80 310 Z" />
+            <path class="body-base" d="M 105 195 L 130 195 L 120 310 L 135 380 L 125 380 L 105 320 Z" />
+
+            <path id="lats" class="muscle" d="M 65 115 C 85 105 115 105 135 115 L 125 185 C 110 190 90 190 75 185 Z" />
+            <path id="traps" class="muscle" d="M 80 85 C 90 85 110 85 120 85 L 130 115 L 70 115 Z" />
+            <path id="lower_back" class="muscle" d="M 80 160 L 120 160 L 120 190 L 80 190 Z" />
+            <path id="triceps" class="muscle" d="M 42 100 L 55 100 L 50 150 L 40 150 Z" />
+            <path id="triceps2" class="muscle" d="M 145 100 L 158 100 L 160 150 L 150 150 Z" />
+            <path id="shoulders_back" class="muscle" d="M 60 90 L 75 90 L 75 105 L 55 105 Z" />
+            <path id="shoulders_back2" class="muscle" d="M 125 90 L 140 90 L 145 105 L 125 105 Z" />
+            <path id="glutes" class="muscle" d="M 75 190 L 98 190 L 98 230 L 72 230 Z" />
+            <path id="glutes2" class="muscle" d="M 102 190 L 125 190 L 128 230 L 102 230 Z" />
+            <path id="hamstrings" class="muscle" d="M 74 235 L 96 235 L 96 300 L 74 300 Z" />
+            <path id="hamstrings2" class="muscle" d="M 104 235 L 126 235 L 126 300 L 104 300 Z" />
+            <path id="calves_back" class="muscle" d="M 74 310 L 94 310 L 90 360 L 72 360 Z" />
+            <path id="calves_back2" class="muscle" d="M 106 310 L 126 310 L 128 360 L 110 360 Z" />
+          </svg>
+        </div>
+      </section>
+
+      <aside id="info-panel" class="info-panel">
+        <div class="placeholder"><p>👈 Кликни на мышцу</p></div>
+      </aside>
+    </main>
+
+    <div class="extra-blocks">
+      <!-- ИМТ -->
+      <div class="extra-card">
+        <h2>Калькулятор ИМТ</h2>
+        <div class="bmi-form">
+          <input type="number" id="weight" placeholder="Вес (кг)">
+          <input type="number" id="height" placeholder="Рост (см)">
+          <button id="calc-bmi" class="toggle-btn active">Рассчитать</button>
+        </div>
+        <div id="bmi-result" class="result-text" style="margin-bottom: 16px;"></div>
+        <div class="bmi-scale-wrapper" id="bmi-scale-wrapper" style="display: none;">
+          <div class="bmi-scale-bar">
+            <div class="bmi-zone zone-under"></div><div class="bmi-zone zone-normal"></div>
+            <div class="bmi-zone zone-over"></div><div class="bmi-zone zone-obese"></div>
+          </div>
+          <div class="bmi-marker" id="bmi-marker"></div>
+          <div class="bmi-scale-labels"><span>15</span><span>18.5</span><span>25</span><span>30</span><span>40</span></div>
+        </div>
+      </div>
+      <!-- ИИ -->
+      <div class="extra-card">
+        <h2>🤖 Спросить ИИ-Тренера</h2>
+        <div class="ai-form">
+          <input type="text" id="ai-question" placeholder="Например: болит плечо?">
+          <button id="ask-ai-btn" class="toggle-btn active">Спросить</button>
+        </div>
+        <div id="ai-msg" class="result-text" style="display: none; color: #10b981;">Вопрос скопирован!</div>
+      </div>
+
+      <!-- Случайное упражнение -->
+      <div class="extra-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <h2>🎲 Упражнение дня</h2>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">Не знаете, что делать?</p>
+        <button id="random-ex-btn" class="toggle-btn active" style="padding: 12px 24px; font-size: 16px;">Мне повезёт</button>
+      </div>
+
+      <!-- Вода -->
+      <div class="extra-card">
+        <h2>💧 Трекер воды</h2>
+        <p style="text-align: center; color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Норма: 8 стаканов</p>
+        <div class="water-glass" id="water-glass" style="cursor: pointer; font-size: 60px; text-align: center; transition: transform 0.2s;">🥛</div>
+        <div class="result-text" id="water-result" style="margin-top: 16px;">0 / 8 стаканов</div>
+        <button id="reset-water" class="toggle-btn" style="margin-top: 12px; font-size: 14px; padding: 6px 12px;">Сбросить</button>
+      </div>
+
+      <!-- Таймер -->
+      <div class="extra-card">
+        <h2>⏱️ Таймер отдыха</h2>
+        <p style="text-align: center; color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Введите своё время</p>
+        <div style="display: flex; gap: 8px; justify-content: center; margin-bottom: 16px;">
+          <input type="number" id="custom-timer-input" class="timer-input" placeholder="Время" min="1" max="600">
+          <select id="timer-unit" class="timer-select">
+            <option value="sec">Секунд</option><option value="min">Минут</option>
+          </select>
+        </div>
+        <div id="timer-display" class="result-text" style="font-size: 36px; font-weight: 800; margin: 16px 0;">00:00</div>
+        <button id="start-timer" class="toggle-btn active" style="width: 100%;">Старт</button>
+      </div>
+    </div>
+  </section>
+  <script src="theme.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

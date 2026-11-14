@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подготовка и Восстановление</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Логотип" class="logo-img">
+        <span>Анатомия тренировок</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="exercises.html">Подготовка</a>
+        <a href="plans.html">Планы</a>
+        <a href="training.html">ОФП</a>
+        <a href="nutrition.html">Питание</a>
+        <a href="diary.html">Дневник</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button id="theme-toggle" class="theme-btn">🌙 Тёмная тема</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-inner">
+      <h1 style="text-align: center; margin-bottom: 12px;">Подготовка и Восстановление</h1>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto;">
+        Готовые видео-комплексы и подробная теория для безопасных тренировок.
+      </p>
+
+      <!-- 5 ВКЛАДОК -->
+      <div class="exercise-tabs">
+        <button class="ex-tab-btn active" data-target="tab-warmup">🔥 Разминка</button>
+        <button class="ex-tab-btn" data-target="tab-mobility">🤸 Мобильность</button>
+        <button class="ex-tab-btn" data-target="tab-stretch">🧘 Растяжка</button>
+        <button class="ex-tab-btn" data-target="tab-cooldown">❄️ Заминка</button>
+        <button class="ex-tab-btn" data-target="tab-recovery">😴 Восстановление</button>
+      </div>
+
+      <!-- 1. РАЗМИНКА -->
+      <div id="tab-warmup" class="ex-tab-content active">
+        <div class="extra-card" style="margin-bottom: 24px; border: 2px solid var(--accent);">
+          <h3 style="margin-bottom: 16px; text-align: center; color: var(--accent);">🎥 Видео-комплекс «Разминка» (15 минут)</h3>
+          <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+            <iframe src="ССЫЛКА_РАЗМИНКА" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="plans-grid">
+          <div class="plan-card" style="border-top-color: #f59e0b;">
+            <h2>🔥 Теория разминки</h2>
+            <p><b>Зачем нужна:</b> Разогревает мышцы, повышает эластичность связок и настраивает нервную систему на работу.</p>
+            <h3 style="margin-top: 20px; color: var(--accent);">1. Суставная гимнастика (5 мин)</h3>
+            <ul class="plan-list">
+              <li><b>Шея:</b> Медленные наклоны головы вперед-назад, влево-вправо, круговые вращения.</li>
+              <li><b>Плечи:</b> Вращения плечами вперед и назад (по 10 раз).</li>
+              <li><b>Локти и кисти:</b> Вращения руками в локтях и кулаками.</li>
+              <li><b>Таз:</b> Вращения тазом (руки на поясе), наклоны в стороны.</li>
+              <li><b>Колени:</b> Вращения коленями вместе и по отдельности.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: var(--accent);">2. Кардио-разогрев (3-5 мин)</h3>
+            <ul class="plan-list">
+              <li><b>Легкий бег на месте</b> или прыжки на скакалке в умеренном темпе.</li>
+              <li><b>Цель:</b> Слегка вспотеть и повысить пульс до 100-120 ударов в минуту.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: var(--accent);">3. Динамическая растяжка (2-3 мин)</h3>
+            <ul class="plan-list">
+              <li><b>Махи руками:</b> Вперед, назад, в стороны.</li>
+              <li><b>Махи ногами:</b> Вперед и назад (держась за опору).</li>
+              <li><b>Выпады с поворотом корпуса:</b> Для раскрытия таза и разогрева ног.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. МОБИЛЬНОСТЬ -->
+      <div id="tab-mobility" class="ex-tab-content">
+        <div class="extra-card" style="margin-bottom: 24px; border: 2px solid #8b5cf6;">
+          <h3 style="margin-bottom: 16px; text-align: center; color: #8b5cf6;">🎥 Видео-комплекс «Мобильность» (15 минут)</h3>
+          <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+            <iframe src="ССЫЛКА_МОБИЛЬНОСТЬ" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="plans-grid">
+          <div class="plan-card" style="border-top-color: #8b5cf6;">
+            <h2>🤸 Теория мобильности</h2>
+            <p><b>Зачем нужна:</b> Мобильность — это способность сустава двигаться в полной амплитуде под контролем мышц. Это защищает суставы от износа.</p>
+            <h3 style="margin-top: 20px; color: var(--accent);">Упражнения для суставов:</h3>
+            <ul class="plan-list">
+              <li><b>Кошка-корова:</b> Стоя на четвереньках, плавно прогибайте и выгибайте спину (10 циклов).</li>
+              <li><b>90/90 (для таза):</b> Сядьте на пол, согните ноги под 90 градусов, перекатывайтесь с одной стороны на другую (10 раз).</li>
+              <li><b>Приседания с удержанием внизу (Deep Squat Hold):</b> Сядьте в глубокий присед, держитесь за опору и тянитесь грудью вперед (30-60 сек).</li>
+              <li><b>Мобильность грудного отдела (Thoracic Bridge):</b> Лежа на спине, согните ноги, руки в стороны. Опускайте колени в одну сторону, прижимая лопатки к полу (8-10 раз в каждую сторону).</li>
+              <li><b>Выпады с ротацией (World's Greatest Stretch):</b> Сделайте широкий шаг вперед в выпад, поставьте одноименную руку на пол, а другую вытяните вверх и поверните корпус (6-8 раз на каждую сторону).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. РАСТЯЖКА -->
+      <div id="tab-stretch" class="ex-tab-content">
+        <div class="extra-card" style="margin-bottom: 24px; border: 2px solid #10b981;">
+          <h3 style="margin-bottom: 16px; text-align: center; color: #10b981;">🎥 Видео-комплекс «Растяжка» (15 минут)</h3>
+          <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+            <iframe src="ССЫЛКА_РАСТЯЖКА" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="plans-grid">
+          <div class="plan-card" style="border-top-color: #10b981;">
+            <h2>🧘 Теория растяжки</h2>
+            <p>Улучшает эластичность мышц, снимает напряжение и ускоряет восстановление. Делается <b>только на разогретые мышцы</b>.</p>
+            <ul class="plan-list">
+              <li><b>Поза ребенка:</b> Сядьте на пятки, наклонитесь вперед, вытянув руки. Расслабляет поясницу (30-60 сек).</li>
+              <li><b>Наклоны вперед сидя:</b> Сядьте, вытяните ноги, тянитесь к носкам. Растягивает бицепс бедра и поясницу (30-45 сек).</li>
+              <li><b>Бабочка:</b> Сядьте, соедините стопы, локтями давите на колени. Раскрывает таз (30-45 сек).</li>
+              <li><b>Растяжка грудных у стены:</b> Обопритесь рукой о стену и разверните корпус. Для осанки и плеч (30 сек на каждую сторону).</li>
+              <li><b>Растяжка квадрицепса:</b> Стоя, подтяните пятку к ягодице. Растягивает переднюю поверхность бедра (30 сек на ногу).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. ЗАМИНКА -->
+      <div id="tab-cooldown" class="ex-tab-content">
+        <div class="extra-card" style="margin-bottom: 24px; border: 2px solid #3b82f6;">
+          <h3 style="margin-bottom: 16px; text-align: center; color: #3b82f6;">🎥 Видео-комплекс «Заминка» (15 минут)</h3>
+          <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+            <iframe src="ССЫЛКА_ЗАМИНКА" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="plans-grid">
+          <div class="plan-card" style="border-top-color: #3b82f6;">
+            <h2>❄️ Теория заминки</h2>
+            <p><b>Зачем нужна:</b> Помогает плавно снизить пульс, вывести молочную кислоту из мышц и предотвращает резкое падение давления.</p>
+            <h3 style="margin-top: 20px; color: var(--accent);">1. Кардио-затухание (3-5 мин)</h3>
+            <ul class="plan-list">
+              <li><b>Спокойная ходьба</b> по залу или на беговой дорожке. Пульс должен плавно опуститься до 90-100 ударов.</li>
+              <li><b>Глубокое дыхание:</b> Вдох носом, медленный выдох ртом.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: var(--accent);">2. Легкая статическая растяжка (3-5 мин)</h3>
+            <ul class="plan-list">
+              <li><b>Растяжка целевых мышц:</b> Если сегодня качали грудь — растяните грудные у стены. Если ноги — сделайте наклоны к прямым ногам.</li>
+              <li><b>Правило:</b> В заминке растяжка должна быть <b>легкой и безболезненной</b> (по 20-30 секунд).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. ВОССТАНОВЛЕНИЕ -->
+      <div id="tab-recovery" class="ex-tab-content">
+        <div class="extra-card" style="margin-bottom: 24px; border: 2px solid #64748b;">
+          <h3 style="margin-bottom: 16px; text-align: center; color: #64748b;">🎥 Видео-комплекс «Восстановление» (15 минут)</h3>
+          <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+            <iframe src="ССЫЛКА_ВОССТАНОВЛЕНИЕ" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="plans-grid">
+          <div class="plan-card" style="border-top-color: #64748b;">
+            <h2>😴 Теория восстановления</h2>
+            <p>Мышцы растут не на тренировке, а во время отдыха.</p>
+            <h3 style="margin-top: 20px; color: var(--accent);">1. Сон — главный фактор</h3>
+            <ul class="plan-list">
+              <li><b>7-9 часов в сутки:</b> Во сне выделяется гормон роста.</li>
+              <li><b>Режим:</b> Старайтесь ложиться и вставать в одно и то же время.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: var(--accent);">2. Миофасциальный релиз (МФР)</h3>
+            <ul class="plan-list">
+              <li><b>Массажный ролл:</b> Катайте мышцы (квадрицепс, спину, икры) по 1-2 минуты.</li>
+              <li><b>Теннисный мяч:</b> Для проработки триггерных точек в ягодичных и плечах.</li>
+            </ul>
+            <h3 style="margin-top: 20px; color: var(--accent);">3. Активное восстановление</h3>
+            <ul class="plan-list">
+              <li><b>Легкая прогулка (30-40 мин):</b> Ускоряет кровообращение.</li>
+              <li><b>Плавание:</b> Снимает нагрузку с суставов.</li>
+              <li><b>Контрастный душ:</b> Чередование теплой и прохладной воды (по 30 сек).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <script src="theme.js"></script>
+  <script>
+    document.querySelectorAll('.ex-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.ex-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.ex-tab-content').forEach(c => c.classList.remove('active'));
+        document.getElementById(btn.dataset.target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

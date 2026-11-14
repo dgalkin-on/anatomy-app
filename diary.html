@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дневник тренировок</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Стили для кастомного поиска */
+    .search-wrapper { position: relative; width: 100%; }
+    
+    .search-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 0 0 10px 10px;
+      
+      /* ОГРАНИЧЕНИЕ ВЫСОТЫ И СКРОЛЛ */
+      max-height: 180px; 
+      overflow-y: auto;
+      
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .search-dropdown.active { display: block; }
+    
+    /* Кастомный красивый скроллбар */
+    .search-dropdown::-webkit-scrollbar { width: 6px; }
+    .search-dropdown::-webkit-scrollbar-track { background: transparent; }
+    .search-dropdown::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+    .search-dropdown::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    .search-item {
+      padding: 10px 16px;
+      cursor: pointer;
+      color: var(--text-color);
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-color);
+      transition: background 0.2s;
+    }
+    
+    .search-item:last-child { border-bottom: none; }
+    .search-item:hover { background: var(--accent); color: #fff; }
+
+    .search-input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Логотип" class="logo-img">
+        <span>Анатомия тренировок</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="exercises.html">Подготовка</a>
+        <a href="plans.html">Планы</a>
+        <a href="training.html">ОФП</a>
+        <a href="nutrition.html">Питание</a>
+        <a href="diary.html">Дневник</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button id="theme-toggle" class="theme-btn">🌙 Тёмная тема</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-inner content-page" style="max-width: 900px;">
+      <h1 style="text-align: center; margin-bottom: 24px;">📓 Дневник тренировок</h1>
+      
+      <!-- БЛОК ДОБАВЛЕНИЯ -->
+      <div class="extra-card" style="margin-bottom: 32px;">
+        <h3 style="margin-bottom: 16px; text-align: center;">Добавить упражнение</h3>
+        
+        <div class="bmi-form" style="flex-direction: column; gap: 12px;">
+          
+          <!-- ПОИСК МЫШЦЫ -->
+          <div class="search-wrapper">
+            <input type="text" id="diary-muscle-input" class="search-input" placeholder="Поиск мышцы (начните вводить)..." autocomplete="off">
+            <div id="muscle-dropdown" class="search-dropdown"></div>
+          </div>
+          
+          <!-- ПОИСК УПРАЖНЕНИЯ -->
+          <div class="search-wrapper">
+            <input type="text" id="diary-exercise-input" class="search-input" placeholder="Сначала выберите мышцу" autocomplete="off" disabled>
+            <div id="exercise-dropdown" class="search-dropdown"></div>
+          </div>
+
+          <div style="display: flex; gap: 8px; width: 100%; flex-wrap: wrap;">
+            <input type="number" id="diary-weight" placeholder="Вес (кг)" style="flex: 1; min-width: 80px; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);">
+            <input type="number" id="diary-sets" placeholder="Подходы" style="flex: 1; min-width: 80px; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);">
+            <input type="number" id="diary-reps" placeholder="Повторы" style="flex: 1; min-width: 80px; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);">
+            <input type="number" id="diary-time" placeholder="Время (сек)" style="flex: 1; min-width: 80px; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);">
+          </div>
+          
+          <button id="add-exercise-btn" class="toggle-btn" style="width: 100%; background: var(--bg-color); color: var(--accent); border: 2px solid var(--accent);">➕ Добавить в тренировку</button>
+        </div>
+      </div>
+
+      <!-- ТЕКУЩАЯ ТРЕНИРОВКА -->
+      <div class="extra-card" style="margin-bottom: 32px; border: 2px dashed var(--accent);">
+        <h3 style="margin-bottom: 16px; color: var(--accent);">📝 Текущая тренировка</h3>
+        <div id="current-workout-list">
+          <p style="color: var(--text-muted); font-size: 14px;">Вы пока не добавили ни одного упражнения.</p>
+        </div>
+        <div style="display: flex; gap: 12px; margin-top: 16px;">
+          <button id="save-workout-btn" class="toggle-btn active" style="flex: 1;">Сохранить тренировку</button>
+          <button id="clear-current-btn" class="reset-btn" style="flex: 0 0 auto; margin-top: 0;">Очистить</button>
+        </div>
+      </div>
+
+      <!-- ГРАФИКИ -->
+      <div class="extra-card" style="margin-bottom: 32px;">
+        <h3 style="margin-bottom: 16px; text-align: center; color: var(--accent);">📈 Аналитика</h3>
+        
+        <div style="margin-bottom: 16px;">
+          <select id="chart-exercise-filter" class="timer-select" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);">
+            <option value="">Все упражнения (разные цвета)</option>
+          </select>
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 20px; justify-content: center; flex-wrap: wrap;">
+          <button class="toggle-btn active chart-tab" data-chart="max-weight">Макс. вес</button>
+          <button class="toggle-btn chart-tab" data-chart="sets">Подходы</button>
+          <button class="toggle-btn chart-tab" data-chart="time">Время (сек)</button>
+          <button class="toggle-btn chart-tab" data-chart="reps">Повторы</button>
+        </div>
+
+        <div style="position: relative; height: 300px; width: 100%;">
+          <canvas id="progressChart"></canvas>
+        </div>
+        <p id="chart-empty-msg" style="text-align: center; color: var(--text-muted); margin-top: 16px;">Добавьте записи, чтобы увидеть графики.</p>
+      </div>
+
+      <!-- ИСТОРИЯ -->
+      <h3 style="color: var(--accent); margin-bottom: 16px;">История тренировок</h3>
+      <div id="diary-history">
+        <p style="color: var(--text-muted);">Записей пока нет.</p>
+      </div>
+      <button id="clear-history-btn" class="reset-btn" style="margin-top: 24px;">Удалить всю историю</button>
+    </div>
+  </section>
+
+  <script src="theme.js"></script>
+  <script>
+    let allMuscles = [];
+    let chartInstance = null;
+    let currentChartMode = 'max-weight';
+    let currentWorkout = []; 
+    let selectedMuscle = null;
+    let selectedExercise = null;
+
+    const muscleInput = document.getElementById('diary-muscle-input');
+    const exerciseInput = document.getElementById('diary-exercise-input');
+    const muscleDropdown = document.getElementById('muscle-dropdown');
+    const exerciseDropdown = document.getElementById('exercise-dropdown');
+    
+    const weightInput = document.getElementById('diary-weight');
+    const setsInput = document.getElementById('diary-sets');
+    const repsInput = document.getElementById('diary-reps');
+    const timeInput = document.getElementById('diary-time');
+    const chartFilter = document.getElementById('chart-exercise-filter');
+
+    const chartColors = ['#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#06b6d4'];
+
+    // Загрузка данных
+    fetch('data/muscles.json').then(r => r.json()).then(data => {
+      allMuscles = data;
+    });
+
+    // --- КАСТОМНЫЙ ПОИСК МЫШЦЫ ---
+    muscleInput.addEventListener('focus', () => {
+      muscleDropdown.innerHTML = allMuscles.map(m => `<div class="search-item" data-id="${m.id}" data-name="${m.name}">${m.name}</div>`).join('');
+      muscleDropdown.classList.add('active');
+    });
+
+    muscleInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      const filtered = allMuscles.filter(m => m.name.toLowerCase().includes(query));
+      muscleDropdown.innerHTML = filtered.map(m => `<div class="search-item" data-id="${m.id}" data-name="${m.name}">${m.name}</div>`).join('');
+      muscleDropdown.classList.add('active');
+    });
+
+    muscleDropdown.addEventListener('click', (e) => {
+      if (e.target.classList.contains('search-item')) {
+        const id = e.target.dataset.id;
+        const name = e.target.dataset.name;
+        
+        muscleInput.value = name;
+        selectedMuscle = allMuscles.find(m => m.id === id);
+        muscleDropdown.classList.remove('active');
+        
+        // Активируем поиск упражнений
+        exerciseInput.disabled = false;
+        exerciseInput.placeholder = 'Поиск упражнения...';
+        exerciseInput.value = '';
+        selectedExercise = null;
+      }
+    });
+
+    // --- КАСТОМНЫЙ ПОИСК УПРАЖНЕНИЯ ---
+    exerciseInput.addEventListener('focus', () => {
+      if (!selectedMuscle) return;
+      exerciseDropdown.innerHTML = selectedMuscle.trainingPhotos.map(ex => `<div class="search-item" data-name="${ex.caption}">${ex.caption}</div>`).join('');
+      exerciseDropdown.classList.add('active');
+    });
+
+    exerciseInput.addEventListener('input', (e) => {
+      if (!selectedMuscle) return;
+      const query = e.target.value.toLowerCase();
+      const filtered = selectedMuscle.trainingPhotos.filter(ex => ex.caption.toLowerCase().includes(query));
+      exerciseDropdown.innerHTML = filtered.map(ex => `<div class="search-item" data-name="${ex.caption}">${ex.caption}</div>`).join('');
+      exerciseDropdown.classList.add('active');
+    });
+
+    exerciseDropdown.addEventListener('click', (e) => {
+      if (e.target.classList.contains('search-item')) {
+        const name = e.target.dataset.name;
+        exerciseInput.value = name;
+        selectedExercise = name;
+        exerciseDropdown.classList.remove('active');
+      }
+    });
+
+    // Закрываем дропдауны при клике вне их
+    document.addEventListener('click', (e) => {
+      if (!muscleInput.contains(e.target) && !muscleDropdown.contains(e.target)) {
+        muscleDropdown.classList.remove('active');
+      }
+      if (!exerciseInput.contains(e.target) && !exerciseDropdown.contains(e.target)) {
+        exerciseDropdown.classList.remove('active');
+      }
+    });
+
+    // --- ЛОГИКА ТЕКУЩЕЙ ТРЕНИРОВКИ ---
+    
+    document.getElementById('add-exercise-btn').addEventListener('click', () => {
+      const weight = weightInput.value;
+      const sets = setsInput.value;
+      const reps = repsInput.value;
+      const time = timeInput.value;
+
+      if (!selectedExercise) { alert('Выберите упражнение из списка!'); return; }
+      if (!weight && !sets && !reps && !time) { alert('Заполните хотя бы одно поле!'); return; }
+
+      currentWorkout.push({ exercise: selectedExercise, weight, sets, reps, time });
+      
+      // СБРОС ВСЕХ ПОЛЕЙ
+      selectedExercise = null;
+      exerciseInput.value = '';
+      exerciseInput.disabled = true;
+      exerciseInput.placeholder = 'Сначала выберите мышцу';
+      
+      muscleInput.value = '';
+      selectedMuscle = null;
+      
+      weightInput.value = ''; setsInput.value = ''; repsInput.value = ''; timeInput.value = '';
+      
+      renderCurrentWorkout();
+    });
+
+    function renderCurrentWorkout() {
+      const list = document.getElementById('current-workout-list');
+      if (currentWorkout.length === 0) {
+        list.innerHTML = '<p style="color: var(--text-muted); font-size: 14px;">Вы пока не добавили ни одного упражнения.</p>';
+        return;
+      }
+      
+      list.innerHTML = currentWorkout.map((item, index) => {
+        let stats = [];
+        if (item.weight) stats.push(`${item.weight} кг`);
+        if (item.sets) stats.push(`${item.sets} подх.`);
+        if (item.reps) stats.push(`${item.reps} повт.`);
+        if (item.time) stats.push(`${item.time} сек`);
+        
+        return `
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border-color);">
+            <div>
+              <b style="color: var(--text-color);">${item.exercise}</b>
+              <span style="color: var(--text-muted); font-size: 13px; margin-left: 8px;">${stats.join(' • ')}</span>
+            </div>
+            <button onclick="removeCurrentExercise(${index})" style="background: none; border: none; color: #ef4444; cursor: pointer; font-size: 18px;">✕</button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    window.removeCurrentExercise = (index) => {
+      currentWorkout.splice(index, 1);
+      renderCurrentWorkout();
+    };
+
+    document.getElementById('clear-current-btn').addEventListener('click', () => {
+      if (confirm('Очистить текущую тренировку?')) {
+        currentWorkout = [];
+        renderCurrentWorkout();
+      }
+    });
+
+    document.getElementById('save-workout-btn').addEventListener('click', () => {
+      if (currentWorkout.length === 0) { alert('Добавьте хотя бы одно упражнение!'); return; }
+
+      const date = new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'short', year: 'numeric' });
+      
+      let history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
+      history.unshift({ date: date, exercises: currentWorkout });
+      localStorage.setItem('workoutHistory', JSON.stringify(history));
+      
+      currentWorkout = [];
+      renderCurrentWorkout();
+      renderHistory();
+    });
+
+    // --- ЛОГИКА ИСТОРИИ И ГРАФИКОВ ---
+    
+    function renderHistory() {
+      let history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
+      const container = document.getElementById('diary-history');
+      
+      if (history.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-muted);">Записей пока нет.</p>';
+        // ПРИНУДИТЕЛЬНАЯ ОЧИСТКА ГРАФИКА
+        if (chartInstance) {
+          chartInstance.destroy();
+          chartInstance = null;
+        }
+        document.getElementById('chart-empty-msg').style.display = 'block';
+        updateFilterList();
+        return;
+      }
+
+      container.innerHTML = history.map((session, sIndex) => {
+        const exercisesHTML = session.exercises.map(ex => {
+          let stats = [];
+          if (ex.weight) stats.push(`${ex.weight} кг`);
+          if (ex.sets) stats.push(`${ex.sets} подх.`);
+          if (ex.reps) stats.push(`${ex.reps} повт.`);
+          if (ex.time) stats.push(`${ex.time} сек`);
+          return `<li style="margin-bottom: 4px; font-size: 14px;">${ex.exercise}: <span style="color: var(--text-muted);">${stats.join(' • ')}</span></li>`;
+        }).join('');
+
+        return `
+          <div class="exercise-card-item" style="margin-bottom: 16px; padding: 16px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+              <h4 style="margin: 0; color: var(--accent);">Тренировка ${session.date}</h4>
+              <button onclick="deleteHistory(${sIndex})" style="background: none; border: none; color: #ef4444; cursor: pointer;">Удалить</button>
+            </div>
+            <ul style="padding-left: 20px; margin: 0;">
+              ${exercisesHTML}
+            </ul>
+          </div>
+        `;
+      }).join('');
+      
+      updateFilterList();
+      updateChart();
+    }
+
+    window.deleteHistory = (index) => {
+      if (confirm('Удалить эту тренировку из истории?')) {
+        let history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
+        history.splice(index, 1);
+        localStorage.setItem('workoutHistory', JSON.stringify(history));
+        renderHistory();
+      }
+    };
+
+    document.getElementById('clear-history-btn').addEventListener('click', () => {
+      if (confirm('Вы уверены, что хотите удалить ВСЮ историю?')) {
+        localStorage.removeItem('workoutHistory');
+        renderHistory(); // Вызовет очистку графика
+      }
+    });
+
+    function updateFilterList() {
+      let history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
+      let allExercises = new Set();
+      
+      history.forEach(session => {
+        session.exercises.forEach(ex => {
+          allExercises.add(ex.exercise);
+        });
+      });
+      
+      chartFilter.innerHTML = '<option value="">Все упражнения (разные цвета)</option>';
+      Array.from(allExercises).forEach(ex => {
+        chartFilter.innerHTML += `<option value="${ex}">${ex}</option>`;
+      });
+    }
+
+    document.querySelectorAll('.chart-tab').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        currentChartMode = e.target.dataset.chart;
+        updateChart();
+      });
+    });
+
+    chartFilter.addEventListener('change', updateChart);
+
+    function updateChart() {
+      const ctx = document.getElementById('progressChart').getContext('2d');
+      const emptyMsg = document.getElementById('chart-empty-msg');
+      const selectedEx = chartFilter.value;
+
+      let history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
+      let chartData = { labels: [], datasets: [] };
+
+      if (selectedEx) {
+        let dataForEx = [];
+        history.forEach(session => {
+          session.exercises.forEach(ex => {
+            if (ex.exercise === selectedEx) {
+              let value = 0;
+              if (currentChartMode === 'max-weight' && ex.weight) value = parseFloat(ex.weight);
+              else if (currentChartMode === 'sets' && ex.sets) value = parseFloat(ex.sets);
+              else if (currentChartMode === 'time' && ex.time) value = parseFloat(ex.time);
+              else if (currentChartMode === 'reps' && ex.reps) value = parseFloat(ex.reps);
+              if (value > 0) dataForEx.push({ date: session.date, value: value });
+            }
+          });
+        });
+
+        if (dataForEx.length === 0) {
+          emptyMsg.style.display = 'block';
+          if (chartInstance) chartInstance.destroy();
+          return;
+        }
+        emptyMsg.style.display = 'none';
+
+        const lastEntries = dataForEx.slice(0, 10).reverse();
+        chartData.labels = lastEntries.map(e => e.date.split(' ')[0] + ' ' + e.date.split(' ')[1]);
+        
+        let chartColor = '#3b82f6', chartLabel = 'Значение';
+        if (currentChartMode === 'sets') { chartColor = '#ec4899'; chartLabel = 'Подходы'; }
+        else if (currentChartMode === 'time') { chartColor = '#f59e0b'; chartLabel = 'Время (сек)'; }
+        else if (currentChartMode === 'reps') { chartColor = '#10b981'; chartLabel = 'Повторы'; }
+        else { chartLabel = 'Вес (кг)'; }
+
+        chartData.datasets.push({
+          label: chartLabel,
+          data: lastEntries.map(e => e.value),
+          borderColor: chartColor, backgroundColor: chartColor + '33',
+          borderWidth: 3, pointBackgroundColor: chartColor, pointRadius: 5, tension: 0.3, fill: true
+        });
+
+      } else {
+        let datesSet = new Set();
+        let exData = {};
+
+        history.forEach(session => {
+          session.exercises.forEach(ex => {
+            let value = 0;
+            if (currentChartMode === 'max-weight' && ex.weight) value = parseFloat(ex.weight);
+            else if (currentChartMode === 'sets' && ex.sets) value = parseFloat(ex.sets);
+            else if (currentChartMode === 'time' && ex.time) value = parseFloat(ex.time);
+            else if (currentChartMode === 'reps' && ex.reps) value = parseFloat(ex.reps);
+
+            if (value > 0) {
+              datesSet.add(session.date);
+              if (!exData[ex.exercise]) exData[ex.exercise] = {};
+              exData[ex.exercise][session.date] = value;
+            }
+          });
+        });
+
+        const sortedDates = Array.from(datesSet).reverse().slice(-10);
+        chartData.labels = sortedDates.map(d => d.split(' ')[0] + ' ' + d.split(' ')[1]);
+
+        let colorIndex = 0;
+        for (let exName in exData) {
+          const dataPoints = sortedDates.map(date => exData[exName][date] || null);
+          const color = chartColors[colorIndex % chartColors.length];
+          chartData.datasets.push({
+            label: exName, data: dataPoints, borderColor: color, backgroundColor: color + '33',
+            borderWidth: 2, pointBackgroundColor: color, pointRadius: 4, tension: 0.3, spanGaps: true
+          });
+          colorIndex++;
+        }
+
+        if (chartData.datasets.length === 0) {
+          emptyMsg.style.display = 'block';
+          if (chartInstance) chartInstance.destroy();
+          return;
+        }
+        emptyMsg.style.display = 'none';
+      }
+
+      if (chartInstance) chartInstance.destroy();
+
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: chartData,
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: !selectedEx, labels: { color: getComputedStyle(document.body).getPropertyValue('--text-color') } } },
+          scales: {
+            y: { beginAtZero: false, ticks: { color: getComputedStyle(document.body).getPropertyValue('--text-muted') } },
+            x: { ticks: { color: getComputedStyle(document.body).getPropertyValue('--text-muted') } }
+          }
+        }
+      });
+    }
+
+    renderHistory();
+  </script>
+</body>
+</html>

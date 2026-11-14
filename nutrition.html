@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Питание для тренировок</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Логотип" class="logo-img">
+        <span>Анатомия тренировок</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="exercises.html">Подготовка</a>
+        <a href="plans.html">Планы</a>
+        <a href="training.html">ОФП</a>
+        <a href="nutrition.html">Питание</a>
+        <a href="diary.html">Дневник</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button id="theme-toggle" class="theme-btn">🌙 Тёмная тема</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-inner content-page" style="max-width: 1000px;">
+      
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h1>🥗 Питание для тренировок</h1>
+        <p style="color: var(--text-muted); max-width: 700px; margin: 12px auto 0; font-size: 16px;">
+          Тренировки запускают процесс, а питание даёт материал для роста и восстановления. Разберём, из чего должен состоять рацион, как считать калории и какие добавки действительно работают.
+        </p>
+      </div>
+
+      <!-- 1. КАЛЬКУЛЯТОР -->
+      <div class="nutrition-card" style="margin-bottom: 40px; border: 2px solid var(--accent); background: var(--panel-bg);">
+        <h2 style="color: var(--accent); margin-bottom: 16px; text-align: center;">🔥 Спортивный калькулятор калорий и БЖУ</h2>
+        <p style="text-align: center; color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">Учитывает вашу тренировочную активность и цели.</p>
+        
+        <div class="bmi-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <input type="number" id="cal-weight" placeholder="Вес (кг)" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);">
+          <input type="number" id="cal-height" placeholder="Рост (см)" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);">
+          <input type="number" id="cal-age" placeholder="Возраст (лет)" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color);">
+          
+          <select id="cal-gender" style="padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color); width: 100%;">
+            <option value="male">Мужчина</option>
+            <option value="female">Женщина</option>
+          </select>
+          
+          <select id="cal-activity" style="padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color); width: 100%; grid-column: span 2;">
+            <option value="1.2">Сидячий образ жизни (без тренировок)</option>
+            <option value="1.375">Легкая активность (1-3 тренировки в неделю)</option>
+            <option value="1.55" selected>Средняя активность (3-5 тренировок в неделю)</option>
+            <option value="1.725">Высокая активность (6-7 тренировок в неделю)</option>
+            <option value="1.9">Очень высокая (тренировки 2 раза в день + физическая работа)</option>
+          </select>
+          
+          <select id="cal-goal" style="padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color); width: 100%; grid-column: span 2;">
+            <option value="0.85">Похудение (дефицит 15%)</option>
+            <option value="1" selected>Поддержание веса</option>
+            <option value="1.15">Набор массы (профицит 15%)</option>
+          </select>
+        </div>
+        
+        <button id="calc-cal" class="toggle-btn active" style="width: 100%; padding: 14px; font-size: 16px; margin-top: 8px;">Рассчитать норму</button>
+        
+        <div id="cal-result" class="result-text" style="margin-top: 24px; display: none; background: var(--bg-color); padding: 20px; border-radius: 12px;"></div>
+      </div>
+
+      <!-- 2. ПРАВИЛЬНАЯ ТАРЕЛКА -->
+      <h2 style="color: var(--accent); margin-bottom: 20px;">🍽️ Правило здоровой тарелки</h2>
+      <div class="nutrition-card" style="margin-bottom: 40px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 250px; height: 250px; border-radius: 50%; background: #e5e7eb; border: 8px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: #10b981;"></div>
+          <div style="position: absolute; top: 0; right: 0; width: 50%; height: 50%; background: #ef4444;"></div>
+          <div style="position: absolute; bottom: 0; right: 0; width: 50%; height: 50%; background: #f59e0b;"></div>
+          
+          <div style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); color: white; font-weight: bold; font-size: 14px; text-align: center;">Овощи<br>50%</div>
+          <div style="position: absolute; top: 25%; right: 25%; transform: translate(50%, -50%); color: white; font-weight: bold; font-size: 12px; text-align: center;">Белки<br>25%</div>
+          <div style="position: absolute; bottom: 25%; right: 25%; transform: translate(50%, 50%); color: white; font-weight: bold; font-size: 12px; text-align: center;">Углеводы<br>25%</div>
+        </div>
+        <div style="flex: 1; min-width: 250px;">
+          <p style="margin-bottom: 16px;">Вам не нужно взвешивать каждый грамм. Достаточно визуально разделить свою тарелку на 3 части:</p>
+          <ul class="styled-list">
+            <li><b>50% — Овощи и зелень:</b> Источник клетчатки и витаминов.</li>
+            <li><b>25% — Белки:</b> Мясо, рыба, яйца или тофу (строительный материал).</li>
+            <li><b>25% — Сложные углеводы:</b> Гречка, рис, картофель (энергия).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. БЖУ И КЛЕТЧАТКА -->
+      <h2 style="color: var(--accent); margin-bottom: 20px;">2. Белки, Жиры, Углеводы и Клетчатка</h2>
+      <div class="nutrition-grid" style="margin-bottom: 40px;">
+        
+        <div class="nutrition-card">
+          <h3>🥩 Белки (Протеин)</h3>
+          <p><b>Зачем:</b> Строительный материал для мышц, гормонов и иммунитета. Без белка мышцы не растут и не восстанавливаются после тренировок.</p>
+          <p><b>Норма:</b> Спортсменам нужно <b>1.6–2.2 г на 1 кг веса</b>. При наборе массы — ближе к 2 г. Для обычного человека — 0.8–1.2 г.</p>
+          <p><b>Источники:</b> Мясо, рыба, яйца, творог, сыр, бобовые, протеиновые коктейли.</p>
+        </div>
+
+        <div class="nutrition-card">
+          <h3>🍚 Углеводы</h3>
+          <p><b>Зачем:</b> Главный источник энергии для мышц и мозга. Если углеводов мало, тренировка проходит вяло, а восстановление замедляется.</p>
+          <p><b>Норма:</b> <b>4–6 г на 1 кг веса</b>. В дни тяжёлых тренировок — ближе к 6 г. Из них <b>не более 25%</b> должно приходиться на простые сахара (сладости, выпечка).</p>
+          <p><b>Источники:</b> Рис, гречка, овсянка, макароны из твёрдых сортов, картофель, фрукты, овощи.</p>
+        </div>
+
+        <div class="nutrition-card">
+          <h3>🥑 Жиры</h3>
+          <p><b>Зачем:</b> Нужны для производства тестостерона (ключевой гормон для роста мышц), усвоения витаминов и здоровья суставов.</p>
+          <p><b>Норма:</b> <b>20–30% от общей калорийности</b>. Упор на ненасыщенные жиры (омега-3, оливковое масло, орехи). Насыщенные (сливочное масло, жирное мясо) — ограничить.</p>
+          <p><b>Источники:</b> Оливковое масло, авокадо, орехи, семечки, жирная рыба (лосось, скумбрия).</p>
+        </div>
+
+        <div class="nutrition-card">
+          <h3>🥦 Клетчатка (Пищевые волокна)</h3>
+          <p><b>Зачем:</b> Не даёт энергии, но критически важна для <b>пищеварения</b> и здоровья кишечника. Помогает стабильно усваивать белки и углеводы, предотвращает запоры при высокобелковой диете.</p>
+          <p><b>Норма:</b> <b>25–35 г в день</b> (или 400–450 г овощей и фруктов).</p>
+          <p><b>Источники:</b> Овощи, фрукты, цельные злаки, бобовые, отруби.</p>
+        </div>
+      </div>
+
+      <!-- 4. СПОРТИВНЫЕ ДОБАВКИ -->
+      <h2 style="color: var(--accent); margin-bottom: 20px;">3. Спортивные добавки (что реально работает)</h2>
+      <div class="nutrition-grid" style="margin-bottom: 40px;">
+        <div class="nutrition-card">
+          <h3>💪 Протеин (Whey)</h3>
+          <p><b>Что это:</b> Концентрированный белок из молочной сыворотки. Быстро усваивается.</p>
+          <p><b>Кому и когда:</b> Если не добираете норму белка из еды. Пить <b>после тренировки</b> или в качестве перекуса.</p>
+        </div>
+        <div class="nutrition-card">
+          <h3>⚡ Креатин</h3>
+          <p><b>Что это:</b> Одна из самых изученных добавок. Повышает выносливость в силовых упражнениях и ускоряет набор массы.</p>
+          <p><b>Кому и когда:</b> Всем, кто тренируется с весами. Принимать <b>каждый день</b> (3–5 г).</p>
+        </div>
+        <div class="nutrition-card">
+          <h3>🔗 BCAA / EAA</h3>
+          <p><b>Что это:</b> Аминокислоты, которые помогают предотвратить разрушение мышц, особенно при дефиците калорий.</p>
+          <p><b>Кому и когда:</b> Тем, кто худеет или тренируется натощак. Пить <b>во время или после тренировки</b>.</p>
+        </div>
+        <div class="nutrition-card">
+          <h3>🍚 Гейнер</h3>
+          <p><b>Что это:</b> Высококалорийная смесь (белки + углеводы) для быстрого набора калорий.</p>
+          <p><b>Кому и когда:</b> Эктоморфам (очень худым), которым трудно съесть много еды. Пить <b>после тренировки</b>.</p>
+        </div>
+      </div>
+
+      <!-- 5. РЕЖИМ ПИТАНИЯ -->
+      <h2 style="color: var(--accent); margin-bottom: 20px;">4. Режим питания: что, когда и сколько</h2>
+      <div class="nutrition-card" style="margin-bottom: 40px; border-left: 4px solid #10b981;">
+        <h3>🕒 Сколько раз в день есть?</h3>
+        <p>Спортсменам рекомендуется питаться <b>5–6 раз в день</b>: 3 основных приёма пищи + 2–3 перекуса. Дробное питание помогает лучше усваивать белок и поддерживать энергию в течение дня.</p>
+        
+        <h3 style="margin-top: 20px;">❌ Что лучше исключить</h3>
+        <ul class="styled-list">
+          <li><b>Сладкие газировки и пакетированные соки</b> — много сахара, ноль пользы.</li>
+          <li><b>Фастфуд и чипсы</b> — трансжиры, которые мешают восстановлению.</li>
+          <li><b>Алкоголь</b> — тормозит синтез белка и снижает тестостерон.</li>
+        </ul>
+
+        <h3 style="margin-top: 20px;">⚠️ Что можно, но ограниченно</h3>
+        <ul class="styled-list">
+          <li><b>Сладости (конфеты, печенье)</b> — допустимы <b>сразу после тренировки</b> (углеводное окно), но не каждый день.</li>
+          <li><b>Кофе</b> — до 2–3 чашек в день, лучше до 16:00, чтобы не нарушать сон.</li>
+          <li><b>Белый рис и макароны</b> — можно, но лучше отдавать предпочтение цельнозерновым вариантам.</li>
+        </ul>
+
+        <h3 style="margin-top: 20px;">✅ Что можно есть свободно</h3>
+        <ul class="styled-list">
+          <li><b>Овощи и зелень</b> — 400–450 г в день.</li>
+          <li><b>Нежирное мясо, рыба, яйца</b> — источники полноценного белка.</li>
+          <li><b>Сложные углеводы</b> — гречка, овсянка, бурый рис, киноа.</li>
+          <li><b>Вода</b> — 30–40 мл на 1 кг веса в день.</li>
+        </ul>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--bg-color); border-radius: 12px; border: 1px solid var(--border-color);">
+        <p style="font-weight: 600; margin-bottom: 8px;">💡 Главное правило</p>
+        <p style="color: var(--text-muted); font-size: 15px;">Не бывает «идеальной» диеты, которая подходит всем. Начните с расчёта калорий и БЖУ, прислушивайтесь к своему телу и корректируйте рацион под свои результаты и самочувствие.</p>
+      </div>
+
+    </div>
+  </section>
+  
+  <script src="theme.js"></script>
+  
+  <script>
+    const calcCalBtn = document.getElementById('calc-cal');
+    if (calcCalBtn) {
+      calcCalBtn.addEventListener('click', () => {
+        const w = parseFloat(document.getElementById('cal-weight').value);
+        const h = parseFloat(document.getElementById('cal-height').value);
+        const a = parseFloat(document.getElementById('cal-age').value);
+        const g = document.getElementById('cal-gender').value;
+        const activity = parseFloat(document.getElementById('cal-activity').value);
+        const goal = parseFloat(document.getElementById('cal-goal').value);
+        const res = document.getElementById('cal-result');
+
+        if (!w || !h || !a) { alert("Заполните вес, рост и возраст!"); return; }
+
+        let bmr = (10 * w) + (6.25 * h) - (5 * a);
+        bmr = (g === 'male') ? bmr + 5 : bmr - 161;
+
+        let tdee = bmr * activity;
+        let targetCalories = Math.round(tdee * goal);
+
+        const protein = Math.round(w * 2);
+        const fat = Math.round((targetCalories * 0.25) / 9);
+        const carbsCalories = targetCalories - (protein * 4) - (fat * 9);
+        const carbs = Math.round(carbsCalories / 4);
+
+        res.style.display = 'block';
+        res.innerHTML = `
+          <h3 style="color: var(--accent); margin-bottom: 16px; text-align: center;">Ваша норма на день</h3>
+          <div style="text-align: center; font-size: 32px; font-weight: 800; color: #ef4444; margin-bottom: 20px;">
+            ${targetCalories} <span style="font-size: 16px; color: var(--text-muted); font-weight: 400;">ккал</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; text-align: center;">
+            <div style="background: rgba(59, 130, 246, 0.1); padding: 12px; border-radius: 8px;">
+              <div style="font-size: 20px; font-weight: 700; color: var(--text-color);">${protein} г</div>
+              <div style="font-size: 12px; color: var(--text-muted);">Белки</div>
+            </div>
+            <div style="background: rgba(245, 158, 11, 0.1); padding: 12px; border-radius: 8px;">
+              <div style="font-size: 20px; font-weight: 700; color: var(--text-color);">${fat} г</div>
+              <div style="font-size: 12px; color: var(--text-muted);">Жиры</div>
+            </div>
+            <div style="background: rgba(16, 185, 129, 0.1); padding: 12px; border-radius: 8px;">
+              <div style="font-size: 20px; font-weight: 700; color: var(--text-color);">${carbs} г</div>
+              <div style="font-size: 12px; color: var(--text-muted);">Углеводы</div>
+            </div>
+          </div>
+          <p style="text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 16px;">*Расчет approximate. Для точной настройки обратитесь к тренеру.</p>
+        `;
+      });
+    }
+  </script>
+</body>
+</html>
