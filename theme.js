@@ -15,4 +15,22 @@ if (themeBtn) {
       themeBtn.textContent = '🌙 Тёмная тема';
     }
   });
+  // --- ЛОГИКА БУРГЕР-МЕНЮ ---
+const burgerBtn = document.getElementById('burger-btn');
+const navMenu = document.querySelector('.main-nav');
+
+if (burgerBtn && navMenu) {
+  burgerBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('open'); // Включаем/выключаем класс
+    burgerBtn.classList.toggle('active'); // Анимация крестика
+  });
+
+  // Закрываем меню, если кликнули по ссылке
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      burgerBtn.classList.remove('active');
+    });
+  });
+}
 }
