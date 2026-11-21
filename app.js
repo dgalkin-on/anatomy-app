@@ -43,8 +43,7 @@ function attachMuscleHandlers() {
 
       currentMuscle = allMuscles.find(m => m.id === baseId);
       currentTab = 'about';
-      showSkeleton();
-      setTimeout(() => { renderPanel(); }, 500); 
+      renderPanel(); // Мгновенно отрисовываем панель
     });
   });
 }
