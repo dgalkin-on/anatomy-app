@@ -13,11 +13,10 @@
     "sports": ["Бокс", "Плавание", "Тяжелая атлетика", "Гребля"],
     "fact": "Большая грудная мышца напрямую влияет на силу удара в единоборствах.",
     "trainingPhotos": [
-      { "caption": "Жим штанги лёжа", "video": "ССЫЛКА_1" },
-      { "caption": "Отжимания от пола", "video": "https://vk.ru/video_ext.php?oid=-49590423&id=171378555&hash=bc65b7bdd8c1c648&hd=4" },
-      { "caption": "Жим гантелей лёжа", "video": "ССЫЛКА_3" },
-      { "caption": "Сведение рук в кроссовере", "video": "ССЫЛКА_4" },
-      { "caption": "Отжимания с хлопком", "video": "ССЫЛКА_5" }
+      { "caption": "Жим штанги лёжа", "video": "https://rutube.ru/play/embed/eaa78a57d31e5a6d2de17af63baaf9a3" },
+      { "caption": "Отжимания от пола", "video": "https://rutube.ru/play/embed/a72d1702b092cf85048716acde8a3c25" },
+      { "caption": "Жим гантелей лёжа", "video": "https://rutube.ru/play/embed/7de26e3d92b1eb08172acb3fd6b62dab" },
+      { "caption": "Сведение рук в кроссовере", "video": "https://rutube.ru/play/embed/03e17a19298c7d1de20574ba5b775520" }
     ]
   },
   {
@@ -34,11 +33,11 @@
     "sports": ["Плавание", "Гимнастика", "Боевые искусства"],
     "fact": "Когда вы кашляете или смеетесь, задействуется именно эта мышца.",
     "trainingPhotos": [
-      { "caption": "Скручивания", "video": "ССЫЛКА_1" },
-      { "caption": "Планка", "video": "ССЫЛКА_2" },
-      { "caption": "Подъем ног лёжа", "video": "ССЫЛКА_3" },
-      { "caption": "Боковая планка", "video": "ССЫЛКА_4" },
-      { "caption": "Берпи", "video": "ССЫЛКА_5" }
+      { "caption": "Скручивания", "video": "https://rutube.ru/play/embed/422f21e975a5dadc59fee784c5222768" },
+      { "caption": "Планка", "video": "https://rutube.ru/play/embed/c2cbc4885540d8d70f8aff2b6f8961c5" },
+      { "caption": "Подъем ног лёжа", "video": "https://rutube.ru/play/embed/0e3d8b90f365784c4e8e46f21e6c0814" },
+      { "caption": "Боковая планка", "video": "https://rutube.ru/play/embed/c7755f091897ef14e8bd352edac98694" },
+      { "caption": "Берпи", "video": "https://rutube.ru/play/embed/c56735df5805fcf9d667e0ff5b46a762" }
     ]
   },
   {
@@ -55,12 +54,10 @@
     "sports": ["Футбол", "Велоспорт", "Легкая атлетика", "Лыжи"],
     "fact": "Квадрицепс состоит из четырех разных мышц и помогает удерживать равновесие.",
     "trainingPhotos": [
-      { "caption": "Приседания со штангой", "video": "https://vk.ru/video_ext.php?oid=-199041874&id=456239157&hash=a1aefc40823dc42d&hd=4"},
-      { "caption": "Болгарские выпады", "video": "ССЫЛКА_2" },
-      { "caption": "Жим ногами", "video": "ССЫЛКА_3" },
-      { "caption": "Разгибание ног в тренажере", "video": "ССЫЛКА_4" },
-      { "caption": "Спринт на 30-60 метров", "video": "ССЫЛКА_5" },
-      { "caption": "Челночный бег 10х10 м", "video": "ССЫЛКА_6" }
+      { "caption": "Приседания со штангой", "video": "https://rutube.ru/play/embed/811dcd2a970823effaa758047baf11e3"},
+      { "caption": "Болгарские выпады", "video": "https://rutube.ru/play/embed/51bf29d5dfafd482941d002a1bded163" },
+      { "caption": "Жим ногами", "video": "https://rutube.ru/play/embed/06ea0085175cbcc4e2d4d8e73923b849" },
+      { "caption": "Разгибание ног в тренажере", "video": "https://rutube.ru/play/embed/401ddbd9b5e1e8355cec07a631192d9c" }
     ]
   },
   {
@@ -77,10 +74,10 @@
     "sports": ["Плавание", "Гребля", "Скалолазание"],
     "fact": "Это самые широкие мышцы в человеческом теле.",
     "trainingPhotos": [
-      { "caption": "Подтягивания", "video": "ССЫЛКА_1" },
-      { "caption": "Тяга штанги в наклоне", "video": "ССЫЛКА_2" },
-      { "caption": "Тяга верхнего блока", "video": "ССЫЛКА_3" },
-      { "caption": "Тяга гантели одной рукой", "video": "ССЫЛКА_4" }
+      { "caption": "Подтягивания", "video": "https://rutube.ru/play/embed/9f7260d4e56e42f2254d131dfff808f3" },
+      { "caption": "Тяга штанги в наклоне", "video": "https://rutube.ru/play/embed/80c98259f9b67b4cfa750b85c2af8a05" },
+      { "caption": "Тяга верхнего блока", "video": "https://rutube.ru/play/embed/d0c8c07140b1f3b6290ded3fc125d182" },
+      { "caption": "Тяга гантели одной рукой", "video": "https://rutube.ru/play/embed/e5c5d927c3f1f9a39eaadbf476b130d6" }
     ]
   },
   {
@@ -97,10 +94,10 @@
     "sports": ["Армрестлинг", "Гимнастика", "Гребля"],
     "fact": "У бицепса две головки, а его основная задача — поворачивать ладонь вверх.",
     "trainingPhotos": [
-      { "caption": "Подъем гантелей на бицепс", "video": "ССЫЛКА_1" },
-      { "caption": "Подтягивания обратным хватом", "video": "ССЫЛКА_2" },
-      { "caption": "Сгибание рук со штангой", "video": "ССЫЛКА_3" },
-      { "caption": "Молотковые сгибания", "video": "ССЫЛКА_4" }
+      { "caption": "Подъем гантелей на бицепс", "video": "https://rutube.ru/play/embed/382c0c232caab00697866902a18d761f" },
+      { "caption": "Подтягивания обратным хватом", "video": "https://rutube.ru/play/embed/53bc4766995d50bb4ebb0c9b2e9bda91" },
+      { "caption": "Сгибание рук со штангой", "video": "https://rutube.ru/play/embed/d3e77a9605ad7b7d66c1e3f6b92a7361" },
+      { "caption": "Молотковые сгибания", "video": "https://rutube.ru/play/embed/bf63ad12e62b52ee4d00d930aa0d4f41" }
     ]
   },
   {
@@ -117,10 +114,10 @@
     "sports": ["Бокс", "Плавание", "Тяжелая атлетика"],
     "fact": "Трицепс составляет около 2/3 объема вашей руки.",
     "trainingPhotos": [
-      { "caption": "Отжимания на брусьях", "video": "ССЫЛКА_1" },
-      { "caption": "Французский жим", "video": "ССЫЛКА_2" },
-      { "caption": "Разгибание рук на блоке", "video": "ССЫЛКА_3" },
-      { "caption": "Алмазные отжимания", "video": "ССЫЛКА_4" }
+      { "caption": "Отжимания на брусьях", "video": "https://rutube.ru/play/embed/7184225abf989d91b695ab0e9d06172c" },
+      { "caption": "Французский жим", "video": "https://rutube.ru/play/embed/eca0a23ec02a776b10315826247dba88" },
+      { "caption": "Разгибание рук на блоке", "video": "https://rutube.ru/play/embed/bfd4285722ad4984991fa95eddd8af41" },
+      { "caption": "Отжимания узким хватом", "video": "https://rutube.ru/play/embed/775c5ec9afa86f4a4895e9cba27e254d" }
     ]
   },
   {
@@ -137,10 +134,10 @@
     "sports": ["Тяжелая атлетика", "Борьба", "Гребля"],
     "fact": "Трапеция защищает шейный отдел позвоночника.",
     "trainingPhotos": [
-      { "caption": "Шраги с гантелями", "video": "ССЫЛКА_1" },
-      { "caption": "Тяга к подбородку", "video": "ССЫЛКА_2" },
-      { "caption": "Шраги со штангой", "video": "ССЫЛКА_3" },
-      { "caption": "Тяга Т-грифа", "video": "ССЫЛКА_4" }
+      { "caption": "Шраги с гантелями", "video": "https://rutube.ru/play/embed/f01be83f08a1bdd3bd807ee57a657141" },
+      { "caption": "Тяга гантелей к подбородку", "video": "https://rutube.ru/play/embed/4745ff7b1d3ef82360dfa1e9a1f79245" },
+      { "caption": "Шраги со штангой", "video": "https://rutube.ru/play/embed/0fa5a7245ff718639ebded22cca6cd2b" },
+      { "caption": "Тяга Т-грифа", "video": "https://rutube.ru/play/embed/a13196c4aff9c6279c5bd7447f06241f" }
     ]
   },
   {
@@ -157,10 +154,10 @@
     "sports": ["Тяжелая атлетика", "Гимнастика", "Йога"],
     "fact": "Это одни из самых сильных мышц в теле.",
     "trainingPhotos": [
-      { "caption": "Гиперэкстензия", "video": "ССЫЛКА_1" },
-      { "caption": "Становая тяга", "video": "ССЫЛКА_2" },
-      { "caption": "Наклоны со штангой", "video": "ССЫЛКА_3" },
-      { "caption": "Лодочка", "video": "ССЫЛКА_4" }
+      { "caption": "Гиперэкстензия", "video": "https://rutube.ru/play/embed/3d493aad07eb82e311413214792bda94" },
+      { "caption": "Становая тяга", "video": "https://rutube.ru/play/embed/a93a0d49f9a3debb11ce2f4cebf25de7" },
+      { "caption": "Наклоны со штангой", "video": "https://rutube.ru/play/embed/2fb6f02e08b9ffc818b0e2ddc80b8d8b" },
+      { "caption": "Супермен", "video": "https://rutube.ru/play/embed/a88e78c82450b0b938186de4be39cf99" }
     ]
   },
   {
@@ -177,12 +174,10 @@
     "sports": ["Легкая атлетика", "Баскетбол", "Велоспорт"],
     "fact": "Работает как мощный насос, прокачивая кровь от ног к сердцу.",
     "trainingPhotos": [
-      { "caption": "Подъем на носки стоя", "video": "ССЫЛКА_1" },
-      { "caption": "Подъем на носки сидя", "video": "ССЫЛКА_2" },
-      { "caption": "Прыжки на скакалке", "video": "ССЫЛКА_3" },
-      { "caption": "Жим носками в тренажере", "video": "ССЫЛКА_4" },
-      { "caption": "Запрыгивания на тумбу", "video": "ССЫЛКА_5" },
-      { "caption": "Выпрыгивания из приседа", "video": "ССЫЛКА_6" }
+      { "caption": "Подъем на носки стоя", "video": "https://rutube.ru/play/embed/3e65169e19d16e07350f448645841583" },
+      { "caption": "Подъем на носки сидя", "video": "https://rutube.ru/play/embed/3d2b607c5c2fb0f5b072f22f57e40d73" },
+      { "caption": "Прыжки на скакалке", "video": "https://rutube.ru/play/embed/147c1a1155aab7ebe9624c16321e1359" },
+      { "caption": "Жим носками в тренажере", "video": "https://rutube.ru/play/embed/8d1d0d339f255c3547b813f7bd8f53ad" }
     ]
   },
   {
@@ -199,10 +194,10 @@
     "sports": ["Плавание", "Бокс", "Тяжелая атлетика", "Гандбол"],
     "fact": "Дельты получили название из-за формы, похожей на греческую букву 'дельта'. Это одна из самых сложных для роста мышц.",
     "trainingPhotos": [
-      { "caption": "Жим гантелей сидя", "video": "ССЫЛКА_1" },
-      { "caption": "Махи гантелями в стороны", "video": "ССЫЛКА_2" },
-      { "caption": "Тяга к подбородку", "video": "ССЫЛКА_3" },
-      { "caption": "Разведение гантелей в наклоне", "video": "ССЫЛКА_4" }
+      { "caption": "Жим гантелей сидя/стоя", "video": "https://rutube.ru/play/embed/35a333f0fb6406601604e4c6b7593482" },
+      { "caption": "Махи гантелями в стороны", "video": "https://rutube.ru/play/embed/3b8b5ecbb6f062df0a019954e2ca7519" },
+      { "caption": "Тяга гантелей к подбородку", "video": "https://rutube.ru/play/embed/4745ff7b1d3ef82360dfa1e9a1f79245" },
+      { "caption": "Разведение гантелей в наклоне", "video": "https://rutube.ru/play/embed/39f6d56b53d59ead27de1f3a10171bba" }
     ]
   },
   {
@@ -219,10 +214,10 @@
     "sports": ["Скалолазание", "Борьба (армрестлинг)", "Тяжелая атлетика"],
     "fact": "Сильные предплечья помогают удерживать штангу или гантели при выполнении тяжелых базовых упражнений.",
     "trainingPhotos": [
-      { "caption": "Сгибание кистей со штангой", "video": "ССЫЛКА_1" },
-      { "caption": "Разгибание кистей со штангой", "video": "ССЫЛКА_2" },
-      { "caption": "Вис на турнике", "video": "ССЫЛКА_3" },
-      { "caption": "Сжатие эспандера", "video": "ССЫЛКА_4" }
+      { "caption": "Сгибание кистей со штангой", "video": "https://rutube.ru/play/embed/036fdefd899efaf7c9c3c7ba8b3ecd0f" },
+      { "caption": "Разгибание кистей со штангой", "video": "https://rutube.ru/play/embed/a00fa9d5427381a9f8c8ef51ad7b2256" },
+      { "caption": "Вис на турнике", "video": "https://rutube.ru/play/embed/408a23c6b81917dcc67707d1f63365e5" },
+      { "caption": "Сжатие эспандера", "video": "https://rutube.ru/play/embed/8a01b65cdadd1a4ba3b7cc62e194d341" }
     ]
   },
   {
@@ -239,10 +234,10 @@
     "sports": ["Легкая атлетика (спринт)", "Футбол", "Велоспорт"],
     "fact": "Именно ягодичные мышцы дают основную мощность при прыжках и беге.",
     "trainingPhotos": [
-      { "caption": "Приседания со штангой", "video": "ССЫЛКА_1" },
-      { "caption": "Ягодичный мостик", "video": "ССЫЛКА_2" },
-      { "caption": "Махи ногой назад", "video": "ССЫЛКА_3" },
-      { "caption": "Румынская тяга", "video": "ССЫЛКА_4" }
+      { "caption": "Приседания со штангой", "video": "https://rutube.ru/play/embed/811dcd2a970823effaa758047baf11e3" },
+      { "caption": "Ягодичный мостик", "video": "https://rutube.ru/play/embed/ed9aa3bce82a33636a8b8b6749a4f5bb" },
+      { "caption": "Махи ногой назад", "video": "https://rutube.ru/play/embed/db13892b73575df48fddf106e2175dc8" },
+      { "caption": "Румынская тяга", "video": "https://rutube.ru/play/embed/a3e95bb4826e40707decaaf533ebae68" }
     ]
   },
   {
@@ -259,10 +254,10 @@
     "sports": ["Футбол", "Спринт", "Баскетбол", "Прыжки в длину"],
     "fact": "Слабая задняя поверхность бедра — одна из самых частых причин травм у футболистов.",
     "trainingPhotos": [
-      { "caption": "Румынская тяга", "video": "ССЫЛКА_1" },
-      { "caption": "Сгибание ног в тренажере", "video": "ССЫЛКА_2" },
-      { "caption": "Становая тяга", "video": "ССЫЛКА_3" },
-      { "caption": "Гиперэкстензия", "video": "ССЫЛКА_4" }
+      { "caption": "Румынская тяга", "video": "https://rutube.ru/play/embed/a3e95bb4826e40707decaaf533ebae68" },
+      { "caption": "Сгибание ног в тренажере", "video": "https://rutube.ru/play/embed/b4d5acafe4e58608cdef28900d74b5a4" },
+      { "caption": "Становая тяга", "video": "https://rutube.ru/play/embed/a93a0d49f9a3debb11ce2f4cebf25de7" },
+      { "caption": "Гиперэкстензия", "video": "https://rutube.ru/play/embed/3d493aad07eb82e311413214792bda94" }
     ]
   }
 ]
